@@ -3,7 +3,6 @@ from tkinter import Frame, Label, ttk
 from os import popen
 
 def chCpu():
-
     command = "grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage}'"
     cpuUsage = str(round(float(popen(command).read()), 3))
 
@@ -15,7 +14,6 @@ def chCpu():
     root.after(1000, chCpu)
 
 def chHDD(event):
-
     part = lstBx.get()
     command = 'df ' + part
     hddUsagelist = list(popen(command).readlines())
@@ -30,11 +28,7 @@ def chHDD(event):
 
     leftHdd.configure(text='Left space:\n' + str(round(hddLeft / 1000000, 3)) + ' GB')
 
-
-
-
 def chRam():
-
     meminfo = dict((i.split()[0].rstrip(':'), int(i.split()[1])) for i in open('/proc/meminfo').readlines())
 
     mem_tt_kib = meminfo['MemTotal']
@@ -51,7 +45,6 @@ def chRam():
     AvRam.configure(text='Available RAM:\n'+mem_av_gib+' GB')
 
     root.after(1000, chRam)
-
 
 root = tk.Tk()
 h, w = 600, 350
@@ -73,7 +66,6 @@ frmContainer.pack()
 
 #-----------#
 
-
 frmCpu = Frame(frmContainer, height=250, width=200, background='#505050', highlightbackground='#404040', highlightthickness=1)
 frmCpu.pack_propagate(False)
 frmCpu.grid(column=0, row=0)
@@ -88,7 +80,6 @@ tempCpu = Label(frmCpu, text='', foreground='white', background='#505050')
 tempCpu.pack()
 
 #-----------#
-
 
 frmHDD = Frame(frmContainer, height=250, width=200, background='#505050', highlightbackground='#404040', highlightthickness=1)
 frmHDD.pack_propagate(False)

@@ -1,8 +1,8 @@
 # QuickScope
-Just a quick and lightweight hardware monitor for Debian/Ubuntu.
+Just a quick and lightweight hardware monitor for Debian based Linux distros.
 
 Dependencies:
-  - Python 3.5.
+  - Python 3.
 
 
 CPU:
@@ -21,6 +21,3 @@ RAM:
   - Total RAM.
   - Active RAM.
   - Available RAM.
-
-
-Other Linux distros were not tested.

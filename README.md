@@ -11,10 +11,9 @@ CPU:
   
   
 Drive(HDD/SSD):
-  - Selection of sections.
-  - Total section space.
-  - Used section space.
-  - Left section space.
+  - Total partition space.
+  - Used partition space.
+  - Left partition space.
   
   
 RAM:
